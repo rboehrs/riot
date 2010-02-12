@@ -161,7 +161,7 @@
 			<#local value = transform(value) />
 		</#if>
 		
-		<#if editMode>
+		<#if inplaceMacroHelper.isEditable(contentMap)>
 			<#if tag?has_content>
 				<#local element=tag />
 			<#else>
@@ -178,7 +178,7 @@
 </#macro>
 
 <#macro properties form tag="div" content=contentMap>
-	<#if editMode>
+	<#if inplaceMacroHelper.isEditable(content)>
 		<${tag} class="riot-content riot-form" riot:contentId="${content.compositeId}" riot:form="${form}"><#nested /></${tag}>
 	<#else>
 		<#nested />
