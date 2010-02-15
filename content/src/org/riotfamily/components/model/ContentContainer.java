@@ -125,7 +125,6 @@ public class ContentContainer extends ActiveRecordBeanSupport {
 	
 	public void unpublish() {
 		if (liveVersion != null) {
-			liveVersion.setContainer(null);
 			liveVersion.delete();
 			liveVersion = null;
 		}
